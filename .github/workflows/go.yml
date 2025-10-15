@@ -26,6 +26,10 @@ jobs:
       run: |
         GOOS=linux GOARCH=amd64 go build -v -o gogs-linux-amd64 .
 
+    - name: Build ARM64 Linux binary
+      run: |
+        GOOS=linux GOARCH=arm64 go build -v -o gogs-linux-arm64 .
+
     - name: Build Windows binary
       run: |
         GOOS=windows GOARCH=amd64 go build -v -o gogs-windows-amd64.exe .
@@ -40,3 +44,4 @@ jobs:
         files: |
           gogs-linux-amd64
           gogs-windows-amd64.exe
+          gogs-linux-arm64
